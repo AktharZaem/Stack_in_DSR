@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 5
+
+typedef struct stack{
+	int top;
+	int arr[max];
+
+}st;
+void create(st *ptr);
+void push(st *ptr);
+void pop(st *ptr);
+int main()
+{
+int ans;
+int Wh;
+st stack;
+st *ptr;
+ptr=&stack;
+do{
+printf("01.Create:\n");
+printf("02.Push:\n");
+printf("03.Pop:\n");
+printf("04.Display\n");
+printf("00.Exit\n");
+
+printf("Enter Your Choice:");
+scanf("%d",&ans);
+
+switch(ans){
+
+case 1:
+create(ptr);
+break;
+
+case 2:
+push(ptr);
+break;
+
+case 3:
+pop(ptr);
+break;
+
+case 4:
+//display(ptr);
+break;
+
+case 00:
+exit(0);
+break;
+
+default:
+printf("Wrong Choice Please Try Again...\n\n");}
+printf("Do you want to Continue Yes[1] No[0]");
+scanf("%d",&Wh);
+}while(Wh!=0);
+
+return 0;
+}void create(st *ptr)
+{
+	ptr->top=0;
+	printf("The Stack was Created...\n");	
+}void push(st *ptr){
+
+	printf("Enter your value:");
+	scanf("%d",&ptr->arr[ptr->top]);
+	printf("You entered %d",ptr->arr[ptr->top]);
+	ptr->top++;
+}void pop(st *ptr){
+
+printf("This %d was popped... ",ptr->arr[ptr->top]);
+ptr->top--;
+}void display(st *ptr){
+
+}
